@@ -1,0 +1,52 @@
+name: Process Feedback Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process:
+    if: contains(github.event.issue.labels.*.name, 'feedback')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Append feedback to data/feedback.md
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: python scripts/append_feedback_issue.py
+
+      - name: Commit the update
+        run: |
+          git config user.name "pipeline-bot"
+          git config user.email "actions@github.com"
+          git add data/feedback.md
+          git commit -m "Add feedback from issue #${{ github.event.issue.number }}"
+          git push
+
+      - name: Comment and close the issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Added to `data/feedback.md` -- the next video will factor this in. Thanks!"
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: "closed"
+            });

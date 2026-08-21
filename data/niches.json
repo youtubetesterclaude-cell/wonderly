@@ -1,0 +1,77 @@
+{
+  "niches": [
+    {
+      "id": "space_facts",
+      "label": "Space & Astronomy Facts",
+      "topic_prompt": "a surprising, lesser-known fact about space, astronomy, or the universe",
+      "visual_keywords": ["space", "galaxy", "nebula", "planet", "stars"],
+      "video_length_seconds": 60,
+      "format": "standard",
+      "weight": 1.0
+    },
+    {
+      "id": "space_facts_shorts",
+      "label": "Space & Astronomy Facts (Shorts)",
+      "topic_prompt": "a surprising, lesser-known fact about space, astronomy, or the universe",
+      "visual_keywords": ["space", "galaxy", "nebula", "planet", "stars"],
+      "video_length_seconds": 45,
+      "format": "shorts",
+      "weight": 1.0
+    },
+    {
+      "id": "psychology_tips",
+      "label": "Psychology & Human Behavior",
+      "topic_prompt": "a research-backed insight about human psychology or behavior that most people don't know",
+      "visual_keywords": ["people thinking", "brain", "conversation", "portrait"],
+      "video_length_seconds": 60,
+      "format": "standard",
+      "weight": 1.0
+    },
+    {
+      "id": "psychology_tips_shorts",
+      "label": "Psychology & Human Behavior (Shorts)",
+      "topic_prompt": "a research-backed insight about human psychology or behavior that most people don't know",
+      "visual_keywords": ["people thinking", "brain", "conversation", "portrait"],
+      "video_length_seconds": 45,
+      "format": "shorts",
+      "weight": 1.0
+    },
+    {
+      "id": "history_mysteries",
+      "label": "History Mysteries",
+      "topic_prompt": "an intriguing unsolved mystery or little-known event from history",
+      "visual_keywords": ["ancient ruins", "old map", "historical", "archive"],
+      "video_length_seconds": 60,
+      "format": "standard",
+      "weight": 1.0
+    },
+    {
+      "id": "history_mysteries_shorts",
+      "label": "History Mysteries (Shorts)",
+      "topic_prompt": "an intriguing unsolved mystery or little-known event from history",
+      "visual_keywords": ["ancient ruins", "old map", "historical", "archive"],
+      "video_length_seconds": 45,
+      "format": "shorts",
+      "weight": 1.0
+    },
+    {
+      "id": "tech_explainers",
+      "label": "Quick Tech Explainers",
+      "topic_prompt": "a technology concept explained simply, something currently relevant in AI, software, or gadgets",
+      "visual_keywords": ["technology", "computer", "circuit board", "coding"],
+      "video_length_seconds": 60,
+      "format": "standard",
+      "weight": 1.0
+    },
+    {
+      "id": "tech_explainers_shorts",
+      "label": "Quick Tech Explainers (Shorts)",
+      "topic_prompt": "a technology concept explained simply, something currently relevant in AI, software, or gadgets",
+      "visual_keywords": ["technology", "computer", "circuit board", "coding"],
+      "video_length_seconds": 45,
+      "format": "shorts",
+      "weight": 1.0
+    }
+  ],
+  "_notes": "weight is set automatically by allocator.py based on performance. 'format' is 'standard' (16:9 landscape) or 'shorts' (9:16 vertical, auto-tagged #Shorts, capped near 60s). Each niche is duplicated as both formats so the bandit can independently discover whether a given topic performs better long-form or as a Short. Add/remove niche objects freely -- allocator.py reads this file fresh each run."
+}

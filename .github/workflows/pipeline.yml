@@ -1,0 +1,55 @@
+name: Generate and Upload Video
+
+on:
+  schedule:
+    # Every 2 days at 14:00 UTC. Edit this cron to change frequency.
+    # Cron format: minute hour day month weekday
+    - cron: "0 14 */2 * *"
+  workflow_dispatch: {}  # lets you trigger manually from the Actions tab
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python scripts/main_pipeline.py --once
+
+      - name: Rebuild dashboard data
+        if: always()  # run even if the pipeline step above failed, so the dashboard reflects the failure/narration too
+        run: python scripts/build_dashboard_data.py
+
+      - name: Commit updated data files
+        if: always()
+        run: |
+          git config user.name "pipeline-bot"
+          git config user.email "actions@github.com"
+          # Add whatever exists -- individual files may not exist yet on a
+          # run that failed before creating them (e.g. before the first
+          # successful upload). Adding the directories is safe and won't
+          # error on missing files the way naming each path directly would.
+          git add data/ docs/
+          git diff --staged --quiet || git commit -m "Update logs [skip ci]"
+          git push

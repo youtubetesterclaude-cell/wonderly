@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wonderly — Pipeline Log</title>
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#161f2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1f2937;
+    --navy-deep: #161f2e;
+    --card: #232f42;
+    --gold: #f2c14e;
+    --teal: #7fc4ab;
+    --rust: #e2725b;
+    --ink: #f5f3ee;
+    --ink-dim: #a9b2c3;
+    --line: #33415a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--navy-deep);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 96px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 22px 20px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  header img { width: 38px; height: 38px; border-radius: 10px; }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  header .sub { font-size: 12px; color: var(--ink-dim); margin-top: 1px; }
+
+  main { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+
+  section { margin-top: 28px; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px 2px;
+  }
+
+  /* --- Dispatch feed (signature element) --- */
+  .feed { position: relative; padding-left: 20px; }
+  .feed::before {
+    content: "";
+    position: absolute;
+    left: 5px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+  .dispatch { position: relative; padding-bottom: 22px; }
+  .dispatch::before {
+    content: "";
+    position: absolute;
+    left: -20px; top: 4px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px var(--navy-deep);
+  }
+  .dispatch:not(:first-child)::before { background: var(--line); }
+  .dispatch time {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-dim);
+    margin-bottom: 5px;
+  }
+  .dispatch p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--ink); }
+  .dispatch:first-child p { font-size: 16px; }
+
+  /* --- Video cards --- */
+  .video-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .video-card .niche {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .video-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 4px 0 8px;
+    line-height: 1.3;
+  }
+  .video-card .meta {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--ink-dim);
+  }
+  .video-card .meta strong { color: var(--ink); }
+
+  /* --- Niche summary bars --- */
+  .niche-row { margin-bottom: 14px; }
+  .niche-row .top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .niche-row .top .fmt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-dim);
+    margin-left: 6px;
+  }
+  .bar-track { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--gold); border-radius: 3px; }
+
+  .empty { color: var(--ink-dim); font-size: 13px; padding: 8px 2px; }
+
+  /* --- Feedback bar --- */
+  .feedback-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+    background: linear-gradient(to top, var(--navy-deep) 60%, transparent);
+    display: flex;
+    gap: 10px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .action-btn {
+    flex: 1;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 14px 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: none;
+  }
+  .action-btn.primary { background: var(--gold); color: var(--navy-deep); }
+  .action-btn.secondary { background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+  .action-btn:disabled, .action-btn.loading {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .updated {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-dim);
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="icon.png" alt="">
+  <div>
+    <h1>Wonderly</h1>
+    <div class="sub">pipeline log</div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="section-label">Latest dispatch</div>
+    <div class="feed" id="feed">
+      <div class="empty">Loading...</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Recent videos</div>
+    <div id="videos"><div class="empty">Loading...</div></div>
+  </section>
+
+  <section>
+    <div class="section-label">Niche performance</div>
+    <div id="niches"><div class="empty">Loading...</div></div>
+  </section>
+
+  <div class="updated" id="updated"></div>
+</main>
+
+<div class="feedback-bar">
+  <a class="action-btn primary" id="make-video-link" href="#" target="_blank" rel="noopener">Make a video now</a>
+  <a class="action-btn secondary" id="feedback-link" href="#" target="_blank" rel="noopener">Give feedback</a>
+</div>
+
+<script>
+  // Set this to your repo, e.g. "yourusername/wonderly-pipeline"
+  const REPO = "YOUR_USERNAME/YOUR_REPO";
+
+  document.getElementById("feedback-link").href =
+    `https://github.com/${REPO}/issues/new?labels=feedback&title=${encodeURIComponent("Feedback")}&body=${encodeURIComponent("Write your feedback here, e.g. \"make titles punchier\" or \"stop covering ancient Egypt\":\n\n")}`;
+
+  document.getElementById("make-video-link").href =
+    `https://github.com/${REPO}/issues/new?labels=run-now&title=${encodeURIComponent("Manual video request")}&body=${encodeURIComponent("Tap \"Submit new issue\" below to kick off a new video now.")}`;
+
+  function timeAgo(iso) {
+    const diffMs = Date.now() - new Date(iso).getTime();
+    const mins = Math.round(diffMs / 60000);
+    if (mins < 60) return `${mins}m ago`;
+    const hrs = Math.round(mins / 60);
+    if (hrs < 24) return `${hrs}h ago`;
+    const days = Math.round(hrs / 24);
+    return `${days}d ago`;
+  }
+
+  fetch("data.json?_=" + Date.now())
+    .then(r => r.json())
+    .then(render)
+    .catch(() => {
+      document.getElementById("feed").innerHTML =
+        '<div class="empty">No data yet — data.json shows up here after the first pipeline run.</div>';
+      document.getElementById("videos").innerHTML = "";
+      document.getElementById("niches").innerHTML = "";
+    });
+
+  function render(data) {
+    // Dispatch feed
+    const feed = document.getElementById("feed");
+    if (!data.narration || data.narration.length === 0) {
+      feed.innerHTML = '<div class="empty">No dispatches yet.</div>';
+    } else {
+      feed.innerHTML = data.narration.map(n => `
+        <div class="dispatch">
+          <time>${timeAgo(n.timestamp)}</time>
+          <p>${escapeHtml(n.text)}</p>
+        </div>
+      `).join("");
+    }
+
+    // Recent videos
+    const videos = document.getElementById("videos");
+    if (!data.videos || data.videos.length === 0) {
+      videos.innerHTML = '<div class="empty">No videos posted yet.</div>';
+    } else {
+      videos.innerHTML = data.videos.map(v => `
+        <a class="video-card" href="${v.url}" target="_blank" rel="noopener">
+          <div class="niche">${escapeHtml(v.niche_label)}</div>
+          <h3>${escapeHtml(v.title)}</h3>
+          <div class="meta">
+            <span>${v.published_date}</span>
+            ${v.views !== null ? `<span><strong>${v.views.toLocaleString()}</strong> views</span>` : '<span>Not tracked yet</span>'}
+            ${v.likes !== null ? `<span><strong>${v.likes.toLocaleString()}</strong> likes</span>` : ''}
+          </div>
+        </a>
+      `).join("");
+    }
+
+    // Niche performance bars
+    const niches = document.getElementById("niches");
+    if (!data.niche_summary || data.niche_summary.length === 0) {
+      niches.innerHTML = '<div class="empty">No performance data yet.</div>';
+    } else {
+      const maxViews = Math.max(1, ...data.niche_summary.map(n => n.avg_views || 0));
+      niches.innerHTML = data.niche_summary.map(n => `
+        <div class="niche-row">
+          <div class="top">
+            <span>${escapeHtml(n.label)}<span class="fmt">${n.format === 'shorts' ? 'SHORTS' : 'STANDARD'}</span></span>
+            <span>${n.avg_views !== null ? n.avg_views.toLocaleString() + ' avg views' : n.video_count + ' posted'}</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:${n.avg_views ? Math.max(4, (n.avg_views / maxViews) * 100) : 4}%"></div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    document.getElementById("updated").textContent =
+      "updated " + timeAgo(data.generated_at);
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>
