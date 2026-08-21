@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T15:56:24.309052+00:00",
+  "generated_at": "2026-08-21T16:33:56.335071+00:00",
   "videos": [
     {
       "video_id": "XyNJ6XN12DE",
@@ -9,9 +9,23 @@
       "url": "https://youtube.com/watch?v=XyNJ6XN12DE",
       "views": null,
       "likes": null
+    },
+    {
+      "video_id": "MEomJI68P14",
+      "title": "Why AI Forgets the Middle of Your Prompts (And the Easy Fix)",
+      "niche_label": "Quick Tech Explainers",
+      "published_date": "2026-08-21",
+      "url": "https://youtube.com/watch?v=MEomJI68P14",
+      "views": null,
+      "likes": null
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-08-21T16:31:44.521422+00:00",
+      "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
+      "niche_id": "tech_explainers"
+    },
     {
       "timestamp": "2026-08-21T15:54:38.115532+00:00",
       "text": "Going with Space & Astronomy Facts (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
@@ -65,7 +79,7 @@
       "id": "tech_explainers",
       "label": "Quick Tech Explainers",
       "format": "standard",
-      "video_count": 0,
+      "video_count": 1,
       "avg_views": null
     },
     {
