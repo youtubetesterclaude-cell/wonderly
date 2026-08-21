@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-08-21T15:56:24.309052+00:00",
+  "videos": [
+    {
+      "video_id": "XyNJ6XN12DE",
+      "title": "Earth Is Secretly Causing the Moon to Rust",
+      "niche_label": "Space & Astronomy Facts (Shorts)",
+      "published_date": "2026-08-21",
+      "url": "https://youtube.com/watch?v=XyNJ6XN12DE",
+      "views": null,
+      "likes": null
+    }
+  ],
+  "narration": [
+    {
+      "timestamp": "2026-08-21T15:54:38.115532+00:00",
+      "text": "Going with Space & Astronomy Facts (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
+      "niche_id": "space_facts_shorts"
+    }
+  ],
+  "niche_summary": [
+    {
+      "id": "space_facts",
+      "label": "Space & Astronomy Facts",
+      "format": "standard",
+      "video_count": 0,
+      "avg_views": null
+    },
+    {
+      "id": "space_facts_shorts",
+      "label": "Space & Astronomy Facts (Shorts)",
+      "format": "shorts",
+      "video_count": 1,
+      "avg_views": null
+    },
+    {
+      "id": "psychology_tips",
+      "label": "Psychology & Human Behavior",
+      "format": "standard",
+      "video_count": 0,
+      "avg_views": null
+    },
+    {
+      "id": "psychology_tips_shorts",
+      "label": "Psychology & Human Behavior (Shorts)",
+      "format": "shorts",
+      "video_count": 0,
+      "avg_views": null
+    },
+    {
+      "id": "history_mysteries",
+      "label": "History Mysteries",
+      "format": "standard",
+      "video_count": 0,
+      "avg_views": null
+    },
+    {
+      "id": "history_mysteries_shorts",
+      "label": "History Mysteries (Shorts)",
+      "format": "shorts",
+      "video_count": 0,
+      "avg_views": null
+    },
+    {
+      "id": "tech_explainers",
+      "label": "Quick Tech Explainers",
+      "format": "standard",
+      "video_count": 0,
+      "avg_views": null
+    },
+    {
+      "id": "tech_explainers_shorts",
+      "label": "Quick Tech Explainers (Shorts)",
+      "format": "shorts",
+      "video_count": 0,
+      "avg_views": null
+    }
+  ]
+}
