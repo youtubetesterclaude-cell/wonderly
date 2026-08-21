@@ -6,7 +6,7 @@ on:
 
 jobs:
   process:
-    if: contains(github.event.issue.labels.*.name, 'feedback')
+    if: contains(github.event.issue.title, '[Wonderly] Feedback') || contains(github.event.issue.labels.*.name, 'feedback')
     runs-on: ubuntu-latest
     permissions:
       issues: write

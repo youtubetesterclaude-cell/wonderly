@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-now:
-    if: contains(github.event.issue.labels.*.name, 'run-now')
+    if: contains(github.event.issue.title, '[Wonderly] Manual video request') || contains(github.event.issue.labels.*.name, 'run-now')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
