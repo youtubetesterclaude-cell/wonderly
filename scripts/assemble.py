@@ -7,6 +7,7 @@ Requires ffmpeg installed on the system (apt install ffmpeg / brew install ffmpe
 import subprocess
 import os
 import json
+import math
 from faster_whisper import WhisperModel
 
 _whisper_model = None
@@ -127,6 +128,22 @@ def assemble_video(voiceover_path: str, clip_paths: list[str], output_path: str,
         "-c", "copy", concatenated,
     ], check=True, capture_output=True)
 
+    # Source stock clips are sometimes shorter than the slice we asked for --
+    # ffmpeg's -t just outputs whatever the source actually has, it doesn't pad.
+    # If that leaves the concatenated reel shorter than the narration, the final
+    # merge step below would otherwise truncate the AUDIO to match the shorter
+    # video (cutting the voiceover off mid-sentence). Loop the reel to guarantee
+    # it's at least as long as the narration before merging.
+    concatenated_duration = _get_duration(concatenated)
+    if concatenated_duration < voice_duration:
+        loops_needed = math.ceil(voice_duration / concatenated_duration)
+        looped = os.path.join(work_dir, "looped.mp4")
+        subprocess.run([
+            "ffmpeg", "-y", "-stream_loop", str(loops_needed - 1), "-i", concatenated,
+            "-c", "copy", looped,
+        ], check=True, capture_output=True)
+        concatenated = looped
+
     # 2. Generate captions from the voiceover audio
     srt_path = os.path.join(work_dir, "captions.srt")
     _generate_captions_srt(voiceover_path, srt_path, orientation=orientation)
@@ -140,7 +157,6 @@ def assemble_video(voiceover_path: str, clip_paths: list[str], output_path: str,
         "-vf", f"subtitles={srt_path}:force_style='{caption_style}'",
         "-map", "0:v", "-map", "1:a",
         "-c:v", "libx264", "-c:a", "aac",
-        "-shortest",
         output_path,
     ], check=True, capture_output=True)
 
