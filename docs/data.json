@@ -1,6 +1,15 @@
 {
-  "generated_at": "2026-08-23T14:56:51.403402+00:00",
+  "generated_at": "2026-08-25T16:12:24.000802+00:00",
   "videos": [
+    {
+      "video_id": "BGB3Nsg2PQQ",
+      "title": "Why People Choose Electric Shocks Over Their Own Thoughts",
+      "niche_label": "Psychology & Human Behavior (Shorts)",
+      "published_date": "2026-08-25",
+      "url": "https://youtube.com/watch?v=BGB3Nsg2PQQ",
+      "views": null,
+      "likes": null
+    },
     {
       "video_id": "OORerNGkw5o",
       "title": "How Your Language Controls Your Bank Account",
@@ -39,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-08-25T16:09:58.280196+00:00",
+      "text": "Going with Psychology & Human Behavior (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
+      "niche_id": "psychology_tips_shorts"
+    },
     {
       "timestamp": "2026-08-23T14:55:01.911689+00:00",
       "text": "Going with Psychology & Human Behavior (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
@@ -86,7 +100,7 @@
       "id": "psychology_tips_shorts",
       "label": "Psychology & Human Behavior (Shorts)",
       "format": "shorts",
-      "video_count": 2,
+      "video_count": 3,
       "avg_views": null
     },
     {
