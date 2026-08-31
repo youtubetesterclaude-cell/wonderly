@@ -26,5 +26,9 @@
   {
     "niche_id": "history_mysteries",
     "topic": "In 1876, chunks of raw meat inexplicably rained down from a clear sky onto a Kentucky farm, leading several brave locals to actually taste it in an attempt to solve the mystery."
+  },
+  {
+    "niche_id": "tech_explainers_shorts",
+    "topic": "ChatGPT doesn\u2019t actually remember what you said five minutes ago\u2014it re-reads your entire conversation from scratch every single time you hit send."
   }
 ]

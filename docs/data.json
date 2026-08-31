@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T14:07:47.623829+00:00",
+  "generated_at": "2026-08-31T14:08:59.130038+00:00",
   "videos": [
     {
       "video_id": "BGB3Nsg2PQQ",
@@ -48,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-08-31T14:05:13.585486+00:00",
+      "text": "Going with Quick Tech Explainers (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
+      "niche_id": "tech_explainers_shorts"
+    },
     {
       "timestamp": "2026-08-29T14:04:48.075223+00:00",
       "text": "Going with History Mysteries as a standard video -- score 0.50, roughly middle of the pack.",
