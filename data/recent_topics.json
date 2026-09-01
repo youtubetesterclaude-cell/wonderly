@@ -30,5 +30,9 @@
   {
     "niche_id": "tech_explainers_shorts",
     "topic": "ChatGPT doesn\u2019t actually remember what you said five minutes ago\u2014it re-reads your entire conversation from scratch every single time you hit send."
+  },
+  {
+    "niche_id": "space_facts",
+    "topic": "The Moon is actively rusting because Earth\u2019s atmosphere is constantly leaking oxygen across 238,000 miles of space onto the lunar surface."
   }
 ]
