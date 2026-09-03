@@ -44,6 +44,11 @@
       "timestamp": "2026-09-01T14:09:19.589591+00:00",
       "text": "Going with Space & Astronomy Facts as a standard video -- score 0.50, roughly middle of the pack.",
       "niche_id": "space_facts"
+    },
+    {
+      "timestamp": "2026-09-03T14:08:57.106014+00:00",
+      "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
+      "niche_id": "tech_explainers"
     }
   ]
 }
