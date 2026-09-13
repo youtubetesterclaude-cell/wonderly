@@ -50,5 +50,9 @@
   {
     "niche_id": "space_facts",
     "topic": "Astronomers discovered a runaway supermassive black hole tearing through deep space at four million miles per hour, leaving a 200,000-light-year-long tail of newly born stars in its wake."
+  },
+  {
+    "niche_id": "tech_explainers_shorts",
+    "topic": "AI image generators don\u2019t actually draw anything\u2014they start with a screen of pure, random digital static and selectively erase the noise until your prompt appears."
   }
 ]
