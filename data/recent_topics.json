@@ -54,5 +54,9 @@
   {
     "niche_id": "tech_explainers_shorts",
     "topic": "AI image generators don\u2019t actually draw anything\u2014they start with a screen of pure, random digital static and selectively erase the noise until your prompt appears."
+  },
+  {
+    "niche_id": "tech_explainers_shorts",
+    "topic": "Noise-canceling headphones don't actually block sound\u2014they generate an exact upside-down copy of the background noise and blast it into your ears so the two sound waves physically collide and destroy each other."
   }
 ]
