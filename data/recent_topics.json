@@ -62,5 +62,9 @@
   {
     "niche_id": "history_mysteries_shorts",
     "topic": "In 1994, a mysterious gooey rain fell over a small Washington town that tests revealed contained living human white blood cells, leaving dozens of residents sick and scientists completely baffled."
+  },
+  {
+    "niche_id": "tech_explainers",
+    "topic": "Why the world's smartest AI models consistently fail at counting letters in simple words, and how a hidden chunking process called tokenization is to blame."
   }
 ]
