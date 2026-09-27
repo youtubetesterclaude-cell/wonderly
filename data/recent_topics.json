@@ -66,5 +66,9 @@
   {
     "niche_id": "tech_explainers",
     "topic": "Why the world's smartest AI models consistently fail at counting letters in simple words, and how a hidden chunking process called tokenization is to blame."
+  },
+  {
+    "niche_id": "tech_explainers_shorts",
+    "topic": "Your phone never actually sends a signal to GPS satellites\u2014it just listens to atomic clocks in space and calculates how many milliseconds late their time stamps arrived to pin down your exact location on Earth."
   }
 ]
