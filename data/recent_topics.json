@@ -70,5 +70,9 @@
   {
     "niche_id": "tech_explainers_shorts",
     "topic": "Your phone never actually sends a signal to GPS satellites\u2014it just listens to atomic clocks in space and calculates how many milliseconds late their time stamps arrived to pin down your exact location on Earth."
+  },
+  {
+    "niche_id": "history_mysteries",
+    "topic": "In 1942, a U.S. Navy blimp drifted out of the sky and landed on a California city street with its radio functioning and parachutes still on board, but both crew members had inexplicably vanished mid-flight without a single trace."
   }
 ]
