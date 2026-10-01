@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T19:11:19.319670+00:00",
+  "generated_at": "2026-10-01T19:38:33.685794+00:00",
   "videos": [
     {
       "video_id": "BGB3Nsg2PQQ",
@@ -48,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-10-01T19:36:34.775483+00:00",
+      "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
+      "niche_id": "tech_explainers"
+    },
     {
       "timestamp": "2026-09-29T19:06:48.822330+00:00",
       "text": "Trying History Mysteries as a standard video this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
