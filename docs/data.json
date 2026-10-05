@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T17:47:45.272345+00:00",
+  "generated_at": "2026-10-05T21:28:55.968896+00:00",
   "videos": [
     {
       "video_id": "BGB3Nsg2PQQ",
@@ -48,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-10-05T21:27:01.420956+00:00",
+      "text": "Trying Psychology & Human Behavior as a standard video this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
+      "niche_id": "psychology_tips"
+    },
     {
       "timestamp": "2026-10-03T17:45:37.337140+00:00",
       "text": "Trying History Mysteries as a standard video this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
@@ -167,11 +172,6 @@
       "timestamp": "2026-08-21T16:31:44.521422+00:00",
       "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
       "niche_id": "tech_explainers"
-    },
-    {
-      "timestamp": "2026-08-21T15:54:38.115532+00:00",
-      "text": "Going with Space & Astronomy Facts (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
-      "niche_id": "space_facts_shorts"
     }
   ],
   "niche_summary": [
