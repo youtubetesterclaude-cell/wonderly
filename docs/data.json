@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:28:55.968896+00:00",
+  "generated_at": "2026-10-07T19:44:53.055977+00:00",
   "videos": [
     {
       "video_id": "BGB3Nsg2PQQ",
@@ -48,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-10-07T19:42:14.673579+00:00",
+      "text": "Going with Quick Tech Explainers (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
+      "niche_id": "tech_explainers_shorts"
+    },
     {
       "timestamp": "2026-10-05T21:27:01.420956+00:00",
       "text": "Trying Psychology & Human Behavior as a standard video this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
@@ -167,11 +172,6 @@
       "timestamp": "2026-08-22T01:13:36.540549+00:00",
       "text": "Going with Psychology & Human Behavior (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
       "niche_id": "psychology_tips_shorts"
-    },
-    {
-      "timestamp": "2026-08-21T16:31:44.521422+00:00",
-      "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
-      "niche_id": "tech_explainers"
     }
   ],
   "niche_summary": [
