@@ -82,5 +82,9 @@
   {
     "niche_id": "tech_explainers_shorts",
     "topic": "Your smartphone camera doesn't actually take a picture when you press the shutter button\u2014it is constantly capturing a hidden rolling stream of photos before you even touch the screen, stitching them together into a single synthetic composite the instant you tap shoot."
+  },
+  {
+    "niche_id": "history_mysteries_shorts",
+    "topic": "In 1897, an American court successfully convicted a man of murder based on testimony provided by the victim's ghost, making it the only time in U.S. history a spirit officially helped solve a crime."
   }
 ]
