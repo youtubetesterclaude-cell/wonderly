@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T18:01:27.417172+00:00",
+  "generated_at": "2026-10-17T16:51:22.704587+00:00",
   "videos": [
     {
       "video_id": "BGB3Nsg2PQQ",
@@ -48,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-10-17T16:49:16.143308+00:00",
+      "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
+      "niche_id": "tech_explainers"
+    },
     {
       "timestamp": "2026-10-15T17:59:12.000908+00:00",
       "text": "Going with Space & Astronomy Facts (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
@@ -167,11 +172,6 @@
       "timestamp": "2026-08-31T14:05:13.585486+00:00",
       "text": "Going with Quick Tech Explainers (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
       "niche_id": "tech_explainers_shorts"
-    },
-    {
-      "timestamp": "2026-08-29T14:04:48.075223+00:00",
-      "text": "Going with History Mysteries as a standard video -- score 0.50, roughly middle of the pack.",
-      "niche_id": "history_mysteries"
     }
   ],
   "niche_summary": [
