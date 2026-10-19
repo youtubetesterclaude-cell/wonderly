@@ -159,6 +159,11 @@
       "timestamp": "2026-10-17T16:49:16.143308+00:00",
       "text": "Going with Quick Tech Explainers as a standard video -- score 0.50, roughly middle of the pack.",
       "niche_id": "tech_explainers"
+    },
+    {
+      "timestamp": "2026-10-19T19:37:37.047708+00:00",
+      "text": "Trying History Mysteries as a standard video this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
+      "niche_id": "history_mysteries"
     }
   ]
 }
