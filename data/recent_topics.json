@@ -110,5 +110,9 @@
   {
     "niche_id": "space_facts",
     "topic": "Mercury isn't just a bare rock\u2014it continuously trails a massive, comet-like glowing tail made of sodium gas that stretches over 15 million miles into deep space."
+  },
+  {
+    "niche_id": "space_facts_shorts",
+    "topic": "The Milky Way isn't just being pulled through the universe by gravity, but is actively being shoved at over one million miles per hour by a terrifyingly vast, completely empty cosmic region known as the Dipole Repeller."
   }
 ]

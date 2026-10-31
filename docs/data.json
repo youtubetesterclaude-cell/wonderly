@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T19:26:14.198060+00:00",
+  "generated_at": "2026-10-31T18:11:35.189563+00:00",
   "videos": [
     {
       "video_id": "BGB3Nsg2PQQ",
@@ -48,6 +48,11 @@
     }
   ],
   "narration": [
+    {
+      "timestamp": "2026-10-31T18:08:30.713985+00:00",
+      "text": "Going with Space & Astronomy Facts (Shorts) as a Short -- score 0.50, roughly middle of the pack.",
+      "niche_id": "space_facts_shorts"
+    },
     {
       "timestamp": "2026-10-29T19:24:21.865792+00:00",
       "text": "Trying Space & Astronomy Facts as a standard video this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
@@ -167,11 +172,6 @@
       "timestamp": "2026-09-13T14:08:37.465015+00:00",
       "text": "Trying Quick Tech Explainers (Shorts) as a Short this run -- giving it a look regardless of past performance, just to keep the data fresh and make sure nothing gets written off too early.",
       "niche_id": "tech_explainers_shorts"
-    },
-    {
-      "timestamp": "2026-09-11T14:09:09.327349+00:00",
-      "text": "Going with Space & Astronomy Facts as a standard video -- score 0.50, roughly middle of the pack.",
-      "niche_id": "space_facts"
     }
   ],
   "niche_summary": [
