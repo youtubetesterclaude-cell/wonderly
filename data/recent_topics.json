@@ -118,5 +118,9 @@
   {
     "niche_id": "tech_explainers",
     "topic": "How AI models actually understand human language not by reading words, but by plotting them on an invisible multi-dimensional map where subtracting 'man' from 'king' and adding 'woman' mathematically equals 'queen'."
+  },
+  {
+    "niche_id": "history_mysteries",
+    "topic": "In 1966, two Brazilian technicians were found dead on a hilltop wearing formal suits and handmade lead eye masks, leaving behind a cryptic notebook with instructions to swallow a secret capsule and wait for a mysterious signal."
   }
 ]
