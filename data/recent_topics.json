@@ -134,5 +134,9 @@
   {
     "niche_id": "space_facts",
     "topic": "Astronomers recently discovered a billion-light-year-wide ring of galaxies that is actually the frozen, fossilized imprint of a giant sound wave created right after the Big Bang."
+  },
+  {
+    "niche_id": "tech_explainers",
+    "topic": "Why AI image generators don't actually draw anything from scratch, but instead create hyper-realistic photos by starting with a screen of pure digital static and slowly erasing the noise."
   }
 ]
