@@ -138,5 +138,9 @@
   {
     "niche_id": "tech_explainers",
     "topic": "Why AI image generators don't actually draw anything from scratch, but instead create hyper-realistic photos by starting with a screen of pure digital static and slowly erasing the noise."
+  },
+  {
+    "niche_id": "tech_explainers",
+    "topic": "Why the world's most powerful AI models aren't actually one giant brain, but a team of specialized sub-models where only two wake up to answer any single prompt."
   }
 ]
